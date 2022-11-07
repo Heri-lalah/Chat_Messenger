@@ -7,9 +7,19 @@
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+  
   <title>Tchat - messenger </title>
   
+  <style>
+    *{
+      font-family : 'Roboto', sans-serif;
+    }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -27,7 +37,6 @@
       }
     }
   </script>
-  
 </head>
 <body>
   <div class="layout bg-white_perso h-screen">
@@ -58,19 +67,32 @@
         </div>
       </div>
 
-      <div class="sidebar_2 bg-white_perso w-1/4 h-100 p-4">
-        <div class="header">
-          <section class="top-header">
+      <div class="sidebar_2 bg-white_perso w-1/5 h-100">
+        <div class="header p-4">
+          <section class="top-header flex justify-between">
             <div><span class="text-xl font-bold">Messages</span><span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span></div>
-            <div><button><i class="fas fa-search text-red-500"></i></button></div>
+            <div><button class="text-xl text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
           </section>
-          <ul class="conversation">
-            <li><a href="">All conversation</a></li>
-            <li><a href="">Archived</a></li>
-            <li><a href="">Starred</a></li>
+          <ul class="conversation flex justify-between mt-2">
+            <li class="text-blue">
+              <a href="" class="block text-xs font-extrabold mb-2">All conversations</a>
+              <hr class="w-1/4">
+            </li>
+            <li class="text">
+              <a href="" class="block text-xs font-bold">Archived</a>
+              <hr class="w-1/4 hidden">
+            </li>
+            <li class="text">
+              <a href="" class="block text-xs font-bold">Starred</a>
+              <hr class="w-1/4 hidden">
+            </li>
           </ul>
         </div>
-        <div></div>
+        <div class="team mt-3">
+          <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 mb-1">team</h3>
+          <div class="h-16 bg-red-100"></div>
+          <div class="h-16 bg-red-200"></div>
+        </div>
         <div></div>
       </div>
       <div class="bg-salmon w-1/2 h-100"></div>
