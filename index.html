@@ -79,7 +79,7 @@
                 <div class="header p-4 sticky top-0 bg-white">
                     <section class="top-header flex justify-between">
                         <div><span class="text-xl font-bold">Messages</span><span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span></div>
-                        <div><button class="text-xl text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
+                        <div><button class="text-xl focus:outline-none text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
                     </section>
                     <ul class="conversation_type flex justify-between mt-2">
                         <li class="text-blue">
@@ -314,9 +314,9 @@
                     
                     <section class="right-element">
                         <ul class="flex justify-between">
-                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button><i class="fas fa-phone-alt"></i></button></li>
-                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button><i class="fas fa-video"></i></button></li>
-                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-4"><button><i class="fas fa-ellipsis-v"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button class="focus:outline-none"><i class="fas fa-phone-alt"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button class="focus:outline-none"><i class="fas fa-video"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-4"><button class="focus:outline-none"><i class="fas fa-ellipsis-v"></i></button></li>
                         </ul>
                     </section>
                 </div>
@@ -329,18 +329,17 @@
                     <div class="sending-left-element full w-5/6 p-4 flex justify-between items-center">
                         
                         <label class="relative block w-full">  
-                            <button class="absolute inset-y-0 left-0 flex items-center pl-4">
+                            <button class="absolute focus:outline-none inset-y-0 left-0 flex items-center pl-4">
                                 <i class="fas fa-microphone"></i>
                             </button>
                             
                             <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-full py-2 p-9 pr-16 shadow-sm focus:outline-none focus:border-slate-400 focus:ring-slate-400 focus:ring-5 sm:text-sm" placeholder="tape your message..." type="text" name="message"/>
 
-
                             <div class="inline-block absolute inset-y-0 right-0 flex items-center pl-2 pr-2">
-                                <button>
+                                <button class="focus:outline-none">
                                     <span class="p-2"><i class="fas fa-paperclip"></i></span>
                                 </button>
-                                <button>
+                                <button  class="focus:outline-none">
                                     <span class="p-2"><i class="far fa-file-image"></i></span>
                                 </button>
                             </div>
@@ -349,7 +348,7 @@
                     </div>
 
                     <div class="sending-right-element  bg-slate-200 h-100 w-auto">
-                        <button>
+                        <button class="focus:outline-none">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
