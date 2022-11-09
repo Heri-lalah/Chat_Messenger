@@ -27,7 +27,7 @@
                     colors: {
                         white_perso: '#eeeef6',
                         gray : '#b4b6cb',
-                        blue : '#13145c',
+                        indigo : '#13145c',
                         salmon : '#d5bbc0',
                         purple : '#585d92',
                         dark : '#3a373d',
@@ -44,23 +44,25 @@
     <!--Offline-->
     <link rel="stylesheet" href="./assets/tailwindcss.css">
     <link rel="stylesheet" href="./assets/all.css">
+    <script src="./assets//js/jquery.js" defer></script>
+    <script src="./assets//js/app.js" defer></script>
     <!--End line Offline-->
 </head>
 <body>
-    <div class="layout bg-white_perso h-screen max-h-screen">
+    <div class="layout bg-white_perso h-screen">
         <div class="flex h-full px-4 pt-4 pb-10 bg-white">
             <!--Sidebar 1-->
-            <div class="sidebar_1 top-0 bg-blue opacity-75 w-16 h-100 rounded-3xl flex flex-col">
+            <div class="sidebar_1 top-0 bg-indigo-800 w-16 h-100 rounded-3xl flex flex-col">
                 <div class="p-3 flex flex-col text-center justify-between h-full divide-y divide-purple">
                     <div class="flex flex-col h-1/2">
                         <div class="logo messenger mt-2 text-purple">
-                            <i class="fab fa-facebook-messenger text-2xl text-white_perso"></i>
+                            <i class="fab fa-facebook-messenger text-2xl text-white"></i>
                         </div>
                         <ul class="box-message flex flex-col md:mt-24">
-                            <li class="m-1 p-1 rounded-lg"><a href=""><i class="far fa-envelope-open text-purple text-xl"></i></a></li>
-                            <li class="m-1 p-1 rounded-lg bg-purple"><a href=""><i class="fas fa-envelope-open-text text-white text-xl"></i></a></li>
-                            <li class="m-1 p-1 rounded-lg"><a href=""><i class="far fa-calendar-alt text-purple text-xl"></i></a></li>
-                            <li class="m-1 p-1 rounded-lg"><a href=""><i class="fas fa-circle text-purple text-xl"></i></a></li>
+                            <li class="boxType m-1 p-1 rounded-lg"><button type="button" class="focus:outline-none"><i class="far fa-envelope-open text-purple text-xl"></i></button></li>
+                            <li class="boxType m-1 p-1 rounded-lg bg-indigo-300 text-white"><button type="button" class="focus:outline-none"><i class="fas fa-envelope-open-text text-xl"></i></button></a></li>
+                            <li class="boxType m-1 p-1 rounded-lg"><button type="button" class="focus:outline-none"><i class="far fa-calendar-alt text-purple text-xl"></i></button></li>
+                            <li class="boxType m-1 p-1 rounded-lg"><button type="button" class="focus:outline-none"><i class="fas fa-circle text-purple text-xl"></i></button></li>
                         </ul>
                     </div>
                     <div class="view-tools h-1/4 flex flex-col justify-between py-5 ">
@@ -69,7 +71,7 @@
                             <i class="fas fa-toggle-off text-purple text-xl"></i>
                         </div>
                         <div>
-                            <span class="text-white_perso text-xs tracking-tight block my-3 bg-blue opacity-100 p-1 rounded-md">Dark mode</span>
+                            <span class="text-white_perso text-xs tracking-tight block my-3 bg-indigo-800 opacity-100 p-1 rounded-md">Dark mode</span>
                             <i class="far fa-moon text-purple text-2xl"></i>
                         </div>
                     </div>
@@ -82,19 +84,19 @@
                 <div class="header p-4 sticky top-0 bg-white">
                     <section class="top-header flex justify-between">
                         <div><span class="text-xl font-bold">Messages</span><span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span></div>
-                        <div><button class="text-xl focus:outline-none text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
+                        <div><button type="button" class="focus:outline-none text-xl focus:outline-none text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
                     </section>
                     <ul class="conversation_type flex justify-between mt-2">
-                        <li class="text-blue">
-                            <a href="" class="block text-xs font-extrabold mb-2">All conversations</a>
-                            <hr class="w-1/4">
+                        <li class="conversation_type_item text-indigo-800">
+                            <button type="button" class="focus:outline-none block text-xs font-extrabold mb-2">All conversations</button>
+                            <hr class="w-1/4 h-1 bg-indigo-800 rounded-full">
                         </li>
-                        <li class="text">
-                            <a href="" class="block text-xs font-bold">Archived</a>
+                        <li class="conversation_type_item text">
+                            <button type="button" class="focus:outline-none block text-xs font-bold">Archived</button>
                             <hr class="w-1/4 hidden">
                         </li>
-                        <li class="text">
-                            <a href="" class="block text-xs font-bold">Starred</a>
+                        <li class="conversation_type_item text">
+                            <button type="button" class="focus:outline-none block text-xs font-bold">Starred</button>
                             <hr class="w-1/4 hidden">
                         </li>
                     </ul>
@@ -307,6 +309,9 @@
             <!--Conversation-->
             <div class="w-1/2 bg-white h-100 relative">
                 <div class="title flex justify-between mx-4 p-3 shadow-xl rounded-xl">
+                    
+                    <!--Top  header-->
+                    
                     <section class="left-element flex items-center">
                         <div><img src="./assets/img/avatar4.png" class="rounded-full w-12" alt="img_member"></div>
                         <ul class="ml-2">
@@ -317,18 +322,19 @@
                     
                     <section class="right-element">
                         <ul class="flex justify-between">
-                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button class="focus:outline-none"><i class="fas fa-phone-alt  inline-block hover:text-gray-700"></i></button></li>
-                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button class="focus:outline-none"><i class="fas fa-video inline-block hover:text-gray-700"></i></button></li>
-                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-4"><button class="focus:outline-none"><i class="fas fa-ellipsis-v inline-block hover:text-gray-700"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button type="button" class="focus:outline-none"><i class="fas fa-phone-alt  inline-block hover:text-gray-700"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button type="button" class="focus:outline-none"><i class="fas fa-video inline-block hover:text-gray-700"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-4"><button type="button" class="focus:outline-none"><i class="fas fa-ellipsis-v inline-block hover:text-gray-700"></i></button></li>
                         </ul>
                     </section>
                 </div>
                 
+                <!--conversation content-->
                 <div class="conversation mx-3 mb-4 overflow-y-scroll h-5/6">
                     <div class="px-3">
                         <div class="friends flex w-3/4  my-2">
                             <img src="./assets/img/avatar3.png" class="self-end rounded-full mx-1 w-8" alt="">
-                            <p class="friend_message py-2 px-2 bg-purple rounded-t-xl rounded-r-xl text-white text-xs">
+                            <p class="friend_message py-2 px-2 bg-indigo-800 rounded-t-xl rounded-r-xl text-white text-xs">
                                 Lorem ipsum dolor sit amet.
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem consectetur magni voluptates quo id quos.
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus pariatur possimus voluptate, aliquid sapiente dolorum facilis quaerat mollitia iusto dolor adipisci id, reprehenderit nulla dolore! Eveniet eius doloremque quaerat. Error voluptates odit iure ab similique, voluptatem nisi mollitia tempora. Debitis maiores fugiat aut, modi eum nesciunt voluptate molestias reprehenderit praesentium.
@@ -345,7 +351,7 @@
 
                         <div class="friends flex w-3/4  my-2">
                             <img src="./assets/img/avatar3.png" class="self-end rounded-full mx-1 w-8" alt="">
-                            <p class="friend_message py-2 px-2 bg-purple rounded-t-xl rounded-r-xl text-white text-xs">
+                            <p class="friend_message py-2 px-2 bg-indigo-800 rounded-t-xl rounded-r-xl text-white text-xs">
                                 Lorem ipsum dolor sit amet.
                             </p>                                   
                         </div>
@@ -360,19 +366,21 @@
 
                     </div>    
                 </div>
-                
+                <!--End conversation content-->
+
+                <!--Sending message elements-->
                 <div class="sending-element mx-3 flex items-center h-10">
                     <div class="sending-left-element full w-11/12 p-4 flex justify-between items-center">
                         <label class="relative block w-full">  
-                            <button class="absolute focus:outline-none inset-y-0 left-0 flex items-center pl-4">
+                            <button type="button" class="absolute focus:outline-none inset-y-0 left-0 flex items-center pl-4">
                                 <i class="fas fa-microphone"></i>
                             </button>
 
                             <div class="inline-block absolute inset-y-0 right-0 flex items-center pl-2 pr-2">
-                                <button class="focus:outline-none">
+                                <button type="button" class="focus:outline-none">
                                     <span class="p-2"><i class="fas fa-paperclip"></i></span>
                                 </button>
-                                <button  class="focus:outline-none">
+                                <button type="button"  class="focus:outline-none">
                                     <span class="p-2"><i class="far fa-file-image"></i></span>
                                 </button>
                             </div>
@@ -383,20 +391,22 @@
                     </div>
 
                     <div class="sending-right-element text-center w-1/12 mr-5">
-                        <button class="focus:outline-none bg-slate-100 hover:bg-slate-300 px-2 py-1 rounded-full">
+                        <button type="button" class="focus:outline-none bg-slate-100 hover:bg-slate-300 px-2 py-1 rounded-full">
                             <i class="fas fa-paper-plane inline-block hover:text-gray-700"></i>
                         </button>
                     </div>
                 </div>
-                
             </div>
+            <!--End of line sendings elements-->
             
             
-            <div class="w-1/4 h-100 bg-white rounded-r-3xl flex flex-col">
+            <div class="w-1/4 max-h-full bg-white rounded-r-3xl overflow-hidden">
+                
+                <!--logged elements-->
                 <div class="header mx-4">
                     <div class="ml-auto flex items-center justify-between w-3/4 mt-2">
                         <div class="mr-5 w-1/5">
-                            <button class="bg-gray-100 focus:outline-none p-2 rounded relative">
+                            <button type="button" class="bg-gray-100 focus:outline-none p-2 rounded relative">
                                 <i class="fa fa-bell text-xl  inline-block hover:text-gray-700"></i>
                                 <span class="absolute -top-1 -right-1 p-1 rounded-full bg-red-500"></span>
                             </button>
@@ -406,14 +416,16 @@
                             <span class="userimage -mr-5 z-10">
                                 <img src="./assets/img/avatar4.png" class="w-12 rounded-full" alt="user">
                             </span>
-                            <button class="usename focus:outline-none w-5/6 flex justify-between p-1 bg-gray-100 rounded-r-3xl">
+                            <button type="button" class="usename focus:outline-none w-5/6 flex justify-between p-1 bg-gray-100 rounded-r-3xl">
                                 <span class="font-bold ml-5  inline-block hover:text-gray-700">Maksud</span>
                                 <span class="mx-2 text-gray-300"><i class="fa fa-chevron-down"></i></span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="h-full overflow-hidden mt-6 mr-4">
+
+                <!--Others of conversation-->
+                <div class="mt-6 mr-4">
                     <p class="-top-24">
                         <img src="./assets/img/avatar5.png" class="mx-auto w-16 rounded-full" alt="chat-img">
                     </p>
@@ -438,9 +450,9 @@
                                 <div class="legend flex items-center justify-between text-center">
                                     <p class="admin-legend font-bold w-1/2">Nasir udin</p>
                                     <div class="guest_pagination w-3/4">
-                                        <button class="mr-5 text-gray-400"><i class="fa fa-caret-left inline-block hover:text-gray-700 focus:outline-none"></i></button>
+                                        <button type="button" class="mr-5 text-gray-400"><i class="fa fa-caret-left inline-block hover:text-gray-700 focus:outline-none"></i></button>
                                         <span><span class="font-bold">1</span>/10</span>
-                                        <button class="ml-5 text-gray-400"><i class="fa fa-caret-right inline-block hover:text-gray-700 focus:outline-none"></i></button>
+                                        <button type="button" class="ml-5 text-gray-400"><i class="fa fa-caret-right inline-block hover:text-gray-700 focus:outline-none"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -481,6 +493,8 @@
 
                     </div> 
                 </div>
+                <!--Others of conversation-->
+
             </div>
             
         </div>
