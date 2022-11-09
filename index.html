@@ -1,307 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
-  
-  <title>Tchat - messenger </title>
-  
-  <style>
-    *{
-      font-family : 'Fredoka', sans-serif;
-    }
-  </style>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            white_perso: '#eeeef6',
-            gray : '#b4b6cb',
-            blue : '#13145c',
-            salmon : '#d5bbc0',
-            purple : '#585d92',
-            dark : '#3a373d',
-            chocolate : '#a4766a'
-          }
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+    
+    <title>Tchat - messenger </title>
+    
+    <style>
+        *{
+            font-family : 'Fredoka', sans-serif;
         }
-      }
-    }
-  </script>
-
-  <!--Offline-->
-  <link rel="stylesheet" href="./assets/tailwindcss.css">
-  <link rel="stylesheet" href="./assets/all.css">
-  <!--End line Offline-->
+    </style>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        white_perso: '#eeeef6',
+                        gray : '#b4b6cb',
+                        blue : '#13145c',
+                        salmon : '#d5bbc0',
+                        purple : '#585d92',
+                        dark : '#3a373d',
+                        chocolate : '#a4766a'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!--Offline-->
+    <link rel="stylesheet" href="./assets/tailwindcss.css">
+    <link rel="stylesheet" href="./assets/all.css">
+    <!--End line Offline-->
 </head>
 <body>
-  <div class="layout bg-white_perso h-screen max-h-screen">
-    <div class="flex h-full p-5 relative bg-white">
-      <!--sidebar 1-->
-      <div class="sidebar_1 top-0 bg-blue opacity-75 w-16 h-100 rounded-3xl flex flex-col">
-        <div class="p-3 flex flex-col text-center justify-between h-full divide-y divide-purple">
-          <div class="flex flex-col h-1/2">
-            <div class="logo messenger mt-2 text-purple">
-              <i class="fab fa-facebook-messenger text-2xl text-white_perso"></i>
+    <div class="layout bg-white_perso h-screen max-h-screen">
+        <div class="flex h-full p-5 relative bg-white">
+            <!--Sidebar 1-->
+            <div class="sidebar_1 top-0 bg-blue opacity-75 w-16 h-100 rounded-3xl flex flex-col">
+                <div class="p-3 flex flex-col text-center justify-between h-full divide-y divide-purple">
+                    <div class="flex flex-col h-1/2">
+                        <div class="logo messenger mt-2 text-purple">
+                            <i class="fab fa-facebook-messenger text-2xl text-white_perso"></i>
+                        </div>
+                        <ul class="box-message flex flex-col md:mt-24">
+                            <li class="m-1 p-1 rounded-lg"><a href=""><i class="far fa-envelope-open text-purple text-xl"></i></a></li>
+                            <li class="m-1 p-1 rounded-lg bg-purple"><a href=""><i class="fas fa-envelope-open-text text-white text-xl"></i></a></li>
+                            <li class="m-1 p-1 rounded-lg"><a href=""><i class="far fa-calendar-alt text-purple text-xl"></i></a></li>
+                            <li class="m-1 p-1 rounded-lg"><a href=""><i class="fas fa-circle text-purple text-xl"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="view-tools h-1/4 flex flex-col justify-between py-5 ">
+                        <div class="flex flex-col">
+                            <i class="fas fa-toggle-on text-white_perso text-xl"></i>
+                            <i class="fas fa-toggle-off text-purple text-xl"></i>
+                        </div>
+                        <div>
+                            <span class="text-white_perso text-xs tracking-tight block my-3 bg-blue opacity-100 p-1 rounded-md">Dark mode</span>
+                            <i class="far fa-moon text-purple text-2xl"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <ul class="box-message flex flex-col md:mt-24">
-              <li class="m-1 p-1 rounded-lg"><a href=""><i class="far fa-envelope-open text-purple text-xl"></i></a></li>
-              <li class="m-1 p-1 rounded-lg bg-purple"><a href=""><i class="fas fa-envelope-open-text text-white text-xl"></i></a></li>
-              <li class="m-1 p-1 rounded-lg"><a href=""><i class="far fa-calendar-alt text-purple text-xl"></i></a></li>
-              <li class="m-1 p-1 rounded-lg"><a href=""><i class="fas fa-circle text-purple text-xl"></i></a></li>
-            </ul>
-          </div>
-          <div class="view-tools h-1/4 flex flex-col justify-between py-5 ">
-            <div class="flex flex-col">
-              <i class="fas fa-toggle-on text-white_perso text-xl"></i>
-              <i class="fas fa-toggle-off text-purple text-xl"></i>
+            <!--End sidebar 1-->
+            
+            <!--Sidebar 2-->
+            <div class="sidebar_2 overflow-y-scroll w-1/5 h-100">
+                <div class="header p-4 sticky top-0 bg-white">
+                    <section class="top-header flex justify-between">
+                        <div><span class="text-xl font-bold">Messages</span><span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span></div>
+                        <div><button class="text-xl text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
+                    </section>
+                    <ul class="conversation_type flex justify-between mt-2">
+                        <li class="text-blue">
+                            <a href="" class="block text-xs font-extrabold mb-2">All conversations</a>
+                            <hr class="w-1/4">
+                        </li>
+                        <li class="text">
+                            <a href="" class="block text-xs font-bold">Archived</a>
+                            <hr class="w-1/4 hidden">
+                        </li>
+                        <li class="text">
+                            <a href="" class="block text-xs font-bold">Starred</a>
+                            <hr class="w-1/4 hidden">
+                        </li>
+                    </ul>
+                </div>
+                <div class="conversation_list">
+                    <div class="team mt-1">
+                        <!--Teams conversations-->
+                        <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 mb-1">team</h3>
+                        <ul>
+                            <li class="conversation_item hover:bg-slate-200 active border-l-2 border-red-600 bg-gradient-to-r from-red-300 to-red-100 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul class="pr-2">
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Ui Design</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--End Teams conversations-->
+                    </div>
+                    
+                    <!--Personal discussions-->
+                    <div class="personal-conversation">
+                        <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 my-4">Personal</h3>
+                        <ul>
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-4"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <p class="font-bold">Name</p>
+                                        <p class="text-gray-400 float-right">il y a 6min</p>  
+                                    </li>
+                                    <li class="text-xs mt-2">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                            <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
+                                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
+                                <ul>
+                                    <li class="text-xs flex justify-between">
+                                        <span class="font-bold">Name</span>
+                                        <span class="text-gray-400">il y a 5min</span>  
+                                    </li>
+                                    <li class="text-xs">Lorem ipsum dolor sit.</li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <!--End Personal discussions-->
+                </div>
             </div>
-            <div>
-              <span class="text-white_perso text-xs tracking-tight block my-3 bg-blue opacity-100 p-1 rounded-md">Dark mode</span>
-              <i class="far fa-moon text-purple text-2xl"></i>
+            <!--End sidebar 2-->
+            
+            <!--Conversation-->
+            <div class="w-1/2 h-100 relative">
+                <div class="title flex justify-between mx-4 p-3 shadow-xl rounded-xl">
+                    <section class="left-element flex">
+                        <div><i class="fas fa-circle text-purple text-4xl"></i></div>
+                        <ul class="ml-2">
+                            <li class="font-bold">Ui Design</li>
+                            <li class="text-xs">Active now</li>
+                        </ul>
+                    </section>
+                    
+                    <section class="right-element">
+                        <ul class="flex justify-between">
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button><i class="fas fa-phone-alt"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-3"><button><i class="fas fa-video"></i></button></li>
+                            <li class="mx-2 bg-slate-200 hover:bg-slate-100 rounded-full py-2 px-4"><button><i class="fas fa-ellipsis-v"></i></button></li>
+                        </ul>
+                    </section>
+                </div>
+                
+                <div class="conversation mx-3 overflow-y-auto h-5/6">
+                    
+                </div>
+                
+                <div class="sending-element mx-2 flex h-10 justify-between">
+                    <div class="sending-left-element full w-5/6 p-4 flex justify-between items-center">
+                        
+                        <label class="relative block w-full">  
+                            <button class="absolute inset-y-0 left-0 flex items-center pl-4">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            
+                            <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-full py-2 p-9 pr-16 shadow-sm focus:outline-none focus:border-slate-400 focus:ring-slate-400 focus:ring-5 sm:text-sm" placeholder="tape your message..." type="text" name="message"/>
+
+
+                            <div class="inline-block absolute inset-y-0 right-0 flex items-center pl-2 pr-2">
+                                <button>
+                                    <span class="p-2"><i class="fas fa-paperclip"></i></span>
+                                </button>
+                                <button>
+                                    <span class="p-2"><i class="far fa-file-image"></i></span>
+                                </button>
+                            </div>
+                        </label>
+
+                    </div>
+
+                    <div class="sending-right-element  bg-slate-200 h-100 w-auto">
+                        <button>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+                
             </div>
-          </div>
+            
+            
+            <div class="bg-dark w-1/4 h-100"></div>
+            
         </div>
-      </div>
-      <!--End sidebar 1-->
-
-      <div class="sidebar_2 overflow-y-scroll w-1/5 h-100">
-        <div class="header p-4 sticky top-0 bg-white">
-          <section class="top-header flex justify-between">
-            <div><span class="text-xl font-bold">Messages</span><span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span></div>
-            <div><button class="text-xl text-gray bg-slate-200 p-1 rounded-full"><i class="fas fa-search"></i></button></div>
-          </section>
-          <ul class="conversation_type flex justify-between mt-2">
-            <li class="text-blue">
-              <a href="" class="block text-xs font-extrabold mb-2">All conversations</a>
-              <hr class="w-1/4">
-            </li>
-            <li class="text">
-              <a href="" class="block text-xs font-bold">Archived</a>
-              <hr class="w-1/4 hidden">
-            </li>
-            <li class="text">
-              <a href="" class="block text-xs font-bold">Starred</a>
-              <hr class="w-1/4 hidden">
-            </li>
-          </ul>
-        </div>
-        <div class="conversation_list">
-          <div class="team mt-1">
-            <!--Teams conversations-->
-            <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 mb-1">team</h3>
-            <ul>
-              <li class="conversation_item hover:bg-slate-200 active border-l-2 border-red-600 bg-gradient-to-r from-red-300 to-red-100 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul class="pr-2">
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-            </ul>
-            <!--End Teams conversations-->
-          </div>
-
-          <!--Personal discussions-->
-          <div class="personal-conversation">
-            <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 my-4">Personal</h3>
-            <ul>
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-4"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <p class="font-bold">Name</p>
-                    <p class="text-gray-400 float-right">il y a 6min</p>  
-                  </li>
-                  <li class="text-xs mt-2">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-              <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
-                <span class="avatar ml-5"><i class="fas fa-circle text-gray-500 text-5xl"></i></span>
-                <ul>
-                  <li class="text-xs flex justify-between">
-                    <span class="font-bold">Name</span>
-                    <span class="text-gray-400">il y a 5min</span>  
-                  </li>
-                  <li class="text-xs">Lorem ipsum dolor sit.</li>
-                </ul>
-              </li>
-
-            </ul>
-          </div>
-          <!--End Personal discussions-->
-        </div>
-      </div>
-      <div class="bg-salmon w-1/2 h-100"></div>
-      <div class="bg-dark w-1/5 h-100"></div>
-      
     </div>
-  </div>
 </body>
 </html>
