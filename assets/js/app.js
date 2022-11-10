@@ -43,4 +43,9 @@ $(document).ready(function(){
         });
     })(AllconversationType, activeConversationTypeClass);
 
+    $(".submitSearch").on("click", function(e){
+        e.preventDefault();
+        $(".message").toggleClass("ml-5");
+        $(".inputsearch").toggleClass("w-0 hidden");
+    })
 })

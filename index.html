@@ -44,8 +44,8 @@
     <!--Offline-->
     <link rel="stylesheet" href="./assets/tailwindcss.css">
     <link rel="stylesheet" href="./assets/all.css">
-    <script src="./assets//js/jquery.js" defer></script>
-    <script src="./assets//js/app.js" defer></script>
+    <script src="./assets/js/jquery.js" defer></script>
+    <script src="./assets/js/app.js" defer></script>
     <!--End line Offline-->
 </head>
 <body>
@@ -82,14 +82,16 @@
             <!--Sidebar 2-->
             <div class="sidebar_2 w-1/5 h-full overflow-y-auto">
                 <div class="header p-4 sticky top-0 bg-white">
-                    <div class="relative">
-                        <section class="top-header flex justify-between items-center">
+                    <div>
+                        <section class="top-header relative">
+
+                            <span class="absolute right-0 flex">
+                                <input class="inputsearch hidden mr-2 w-full right-0 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-full py-1 pl-2 pr-7 shadow-sm focus:outline-none focus:border-slate-400 focus:ring-slate-400 focus:ring-5 sm:text-sm" placeholder="search..." type="text" name="message"/>
+                                <button type="button" class="submitSearch focus:outline-none hover:bg-gray-200 hover:text-gray-500 right-0 py-1 px-2 bg-gray-100 rounded-full"><i class="fa fa-search"></i></button>
+                            </span>
                             <div>
-                                <span class="text-xl font-bold">Messages</span>
+                                <span class="message text-xl font-bold">Messages</span>
                                 <span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span>
-                            </div>
-                            <div>
-                                <button type="button" id="searchbutton" class="focus:outline-none text-xl focus:outline-none text-gray bg-slate-200 py-1 px-2 rounded-full"><i class="fas fa-search"></i></button>
                             </div>
                         </section>
                     </div>
