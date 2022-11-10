@@ -16,15 +16,15 @@ function clickedElement(cible, addClass) {
 
 $(document).ready(function(){
 
-    var conversation_item = document.querySelectorAll('.conversation_item');
+    var conversation_item = $('.conversation_item');
     var conversation_activeClass = "border-l-2 border-red-600 bg-gradient-to-r from-red-300 to-red-100 transition-opacity";
     clickedElement(conversation_item, conversation_activeClass);
 
-    var boxType = document.querySelectorAll('.boxType');
+    var boxType = $('.boxType');
     var boxTypeClassActive = "bg-indigo-300 text-white";
     clickedElement(boxType, boxTypeClassActive);
 
-    var AllconversationType = document.querySelectorAll('.conversation_type_item');
+    var AllconversationType = $('.conversation_type_item');
     var activeConversationTypeClass = "text-indigo-800";
     clickedElement(AllconversationType, activeConversationTypeClass);
 
@@ -42,6 +42,5 @@ $(document).ready(function(){
             })
         });
     })(AllconversationType, activeConversationTypeClass);
-
 
 })

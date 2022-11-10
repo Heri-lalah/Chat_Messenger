@@ -60,7 +60,7 @@
                         </div>
                         <ul class="box-message flex flex-col md:mt-24">
                             <li class="boxType m-1 p-1 rounded-lg"><button type="button" class="focus:outline-none"><i class="far fa-envelope-open text-purple text-xl"></i></button></li>
-                            <li class="boxType m-1 p-1 rounded-lg bg-indigo-300 text-white"><button type="button" class="focus:outline-none"><i class="fas fa-envelope-open-text text-xl"></i></button></a></li>
+                            <li class="boxType m-1 p-1 rounded-lg bg-indigo-300 text-white"><button type="button" class="focus:outline-none"><i class="fas fa-envelope-open-text text-purple text-xl"></i></button></a></li>
                             <li class="boxType m-1 p-1 rounded-lg"><button type="button" class="focus:outline-none"><i class="far fa-calendar-alt text-purple text-xl"></i></button></li>
                             <li class="boxType m-1 p-1 rounded-lg"><button type="button" class="focus:outline-none"><i class="fas fa-circle text-purple text-xl"></i></button></li>
                         </ul>
@@ -82,10 +82,17 @@
             <!--Sidebar 2-->
             <div class="sidebar_2 w-1/5 h-full overflow-y-auto">
                 <div class="header p-4 sticky top-0 bg-white">
-                    <section class="top-header flex justify-between">
-                        <div><span class="text-xl font-bold">Messages</span><span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span></div>
-                        <div><button type="button" class="focus:outline-none text-xl focus:outline-none text-gray bg-slate-200 py-1 px-2 rounded-full"><i class="fas fa-search"></i></button></div>
-                    </section>
+                    <div class="relative">
+                        <section class="top-header flex justify-between items-center">
+                            <div>
+                                <span class="text-xl font-bold">Messages</span>
+                                <span class="bg-red-500 rounded-full py-1 px-2 font-bold text-white text-xs mx-1">5</span>
+                            </div>
+                            <div>
+                                <button type="button" id="searchbutton" class="focus:outline-none text-xl focus:outline-none text-gray bg-slate-200 py-1 px-2 rounded-full"><i class="fas fa-search"></i></button>
+                            </div>
+                        </section>
+                    </div>
                     <ul class="conversation_type flex justify-between mt-2">
                         <li class="conversation_type_item text-indigo-800">
                             <button type="button" class="focus:outline-none block text-xs font-extrabold mb-2">All conversations</button>
