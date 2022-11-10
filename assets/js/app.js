@@ -14,9 +14,8 @@ function clickedElement(cible, addClass) {
     return value;
 }
 
-
 $(document).ready(function(){
-    //conversation list
+
     var conversation_item = document.querySelectorAll('.conversation_item');
     var conversation_activeClass = "border-l-2 border-red-600 bg-gradient-to-r from-red-300 to-red-100 transition-opacity";
     clickedElement(conversation_item, conversation_activeClass);
@@ -28,5 +27,21 @@ $(document).ready(function(){
     var AllconversationType = document.querySelectorAll('.conversation_type_item');
     var activeConversationTypeClass = "text-indigo-800";
     clickedElement(AllconversationType, activeConversationTypeClass);
+
+    (function (AllconversationType, activeConversationTypeClass) {
+        value = $(AllconversationType).each(function(index){
+    
+            $(this).on("click",function(){
+                $(AllconversationType).each(function(index){
+                     $(AllconversationType[index]).removeClass(activeConversationTypeClass);
+                     $(AllconversationType[index].children).last().addClass('hidden');
+                });
+                
+                $(this).addClass(activeConversationTypeClass);
+                $(this.children).last().removeClass('hidden').stop();
+            })
+        });
+    })(AllconversationType, activeConversationTypeClass);
+
 
 })
