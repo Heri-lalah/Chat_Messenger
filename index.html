@@ -49,6 +49,7 @@
     <!--End line Offline-->
 </head>
 <body>
+
     <div class="layout bg-white_perso h-screen">
         <div class="flex h-full px-4 pt-4 pb-10 bg-white">
             <!--Sidebar 1-->
@@ -86,7 +87,7 @@
                         <section class="top-header relative">
 
                             <span class="absolute right-0 flex">
-                                <input class="inputsearch hidden mr-2 w-full right-0 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-full py-1 pl-2 pr-7 shadow-sm focus:outline-none focus:border-slate-400 focus:ring-slate-400 focus:ring-5 sm:text-sm" placeholder="search..." type="text" name="message"/>
+                                <input class="inputsearch hidden py-1 pl-2 pr-7 mr-3 w-full right-0 placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-full shadow-sm focus:outline-none focus:border-slate-400 focus:ring-slate-400 focus:ring-5 sm:text-sm" placeholder="search..." type="text" name="message"/>
                                 <button type="button" class="submitSearch focus:outline-none hover:bg-gray-200 hover:text-gray-500 right-0 py-1 px-2 bg-gray-100 rounded-full"><i class="fa fa-search"></i></button>
                             </span>
                             <div>
@@ -95,16 +96,16 @@
                             </div>
                         </section>
                     </div>
-                    <ul class="conversation_type flex justify-between mt-2">
-                        <li class="conversation_type_item text-indigo-800">
+                    <ul class="filter_type flex justify-between mt-2">
+                        <li class="filter_type_item text-indigo-800">
                             <button type="button" class="focus:outline-none block text-xs font-extrabold mb-2">All conversations</button>
                             <hr class="w-1/4 h-1 bg-indigo-800 rounded-full active">
                         </li>
-                        <li class="conversation_type_item text">
+                        <li class="filter_type_item text">
                             <button type="button" class="focus:outline-none block text-xs font-bold mb-2">Archived</button>
                             <hr class="w-3/4 h-1 bg-indigo-800 rounded-full hidden">
                         </li>
-                        <li class="conversation_type_item text">
+                        <li class="filter_type_item text">
                             <button type="button" class="focus:outline-none block text-xs font-bold mb-2">Starred</button>
                             <hr class="w-1/4 h-1 bg-indigo-800 rounded-full hidden">
                         </li>
@@ -113,8 +114,8 @@
                 <div class="conversation_list">
                     <div class="team mt-1">
                         <!--Teams conversations-->
-                        <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 mb-1">team</h3>
-                        <ul>
+                        <h3 class="conversation_type team-title text-xs text-gray font-extrabold uppercase mx-4 mb-1">team</h3>
+                        <ul class="list_conversation">
                             <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
                                 <img src="./assets/img/avatar4.png" class="ml-5 rounded-full w-10" alt="friend_image">
                                 <ul class="pr-2">
@@ -141,8 +142,8 @@
                     
                     <!--Personal discussions-->
                     <div class="personal-conversation">
-                        <h3 class="team-title text-xs text-gray font-extrabold uppercase mx-4 my-4">Personal</h3>
-                        <ul>
+                        <h3 class="conversation_type team-title text-xs text-gray font-extrabold uppercase mx-4 my-4">Personal</h3>
+                        <ul class="list_conversation">
                             <li class="conversation_item hover:bg-slate-200 h-16 flex gap-3 items-center">
                                 <img src="./assets/img/avatar2.png" class="ml-5 rounded-full w-10" alt="friend_image">
                                 <ul>

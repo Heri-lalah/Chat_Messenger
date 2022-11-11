@@ -24,28 +24,53 @@ $(document).ready(function(){
     var boxTypeClassActive = "bg-indigo-300 text-white";
     clickedElement(boxType, boxTypeClassActive);
 
-    var AllconversationType = $('.conversation_type_item');
-    var activeConversationTypeClass = "text-indigo-800";
-    clickedElement(AllconversationType, activeConversationTypeClass);
+    var AllfilterConversationType = $('.filter_type_item');
+    var filterConversationTypeClass = "text-indigo-800";
 
-    (function (AllconversationType, activeConversationTypeClass) {
-        value = $(AllconversationType).each(function(index){
+    (function (AllfilterConversationType, filterConversationTypeClass) {
+        value = $(AllfilterConversationType).each(function(index){
     
             $(this).on("click",function(){
-                $(AllconversationType).each(function(index){
-                     $(AllconversationType[index]).removeClass(activeConversationTypeClass);
-                     $(AllconversationType[index].children).last().addClass('hidden');
+                $(AllfilterConversationType).each(function(index){
+                     $(AllfilterConversationType[index]).removeClass(filterConversationTypeClass);
+                     $(AllfilterConversationType[index].children).last().addClass('hidden');
                 });
                 
-                $(this).addClass(activeConversationTypeClass);
-                $(this.children).last().removeClass('hidden').stop();
+                $(this).addClass(filterConversationTypeClass);
+                $(this.children).last().removeClass('hidden');
             })
         });
-    })(AllconversationType, activeConversationTypeClass);
+    })(AllfilterConversationType, filterConversationTypeClass);
 
     $(".submitSearch").on("click", function(e){
         e.preventDefault();
-        $(".message").toggleClass("ml-5");
-        $(".inputsearch").toggleClass("w-0 hidden");
+        $(".inputsearch").toggleClass("transition duration-500 w-0 hidden");
+        $(".inputsearch").val("");
+    })
+
+    /*
+    ***************************
+    search conversation function
+    ****************************
+    */
+    $(".inputsearch").on("keyup",function(){
+        value = $(this).val().toLowerCase();
+        $(".list_conversation .conversation_item").filter(function(){
+
+            $(this).children().toggle($(this).children().text().toLowerCase().indexOf(value) >-1);
+
+            if($(this).children().text().toLowerCase().indexOf(value)==-1) {
+                $(this).hide();
+                $(".conversation_type").hide();
+            }else{
+                $(this).show()
+                $(".conversation_type").show();
+            }
+        });
+    });
+
+    $(".inputsearch").on("focusout", function(){
+        $(this).val("");
+        $(this).addClass("hidden");
     })
 })
