@@ -14,6 +14,22 @@ function clickedElement(cible, addClass) {
     return value;
 }
 
+
+function sendMessage(){
+   
+    value = () => {
+        message = $(".messageTo").val();
+
+        text = '<div class="user w-full flex justify-end"><p class="py-2 ml-auto max-w-md px-2 bg-slate-200 rounded-t-xl rounded-l-xl text-xs">' + message + "</p></div>";
+        
+        $(".tchat_item").append(text);
+        $(".messageTo").val("");
+    }
+
+    return value();
+
+}
+
 $(document).ready(function(){
 
     var conversation_item = $('.conversation_item');
@@ -77,13 +93,12 @@ $(document).ready(function(){
     /**
      * Send message function
      */
-    $(".submitMessageTo").click(function(e){
-        
-        message = $(".messageTo").val();
 
-        text = '<div class="user w-full flex justify-end"><p class="py-2 ml-auto max-w-md px-2 bg-slate-200 rounded-t-xl rounded-l-xl text-xs">' + message + "</p></div>";
-        
-        $(".tchat_item").append(text);
-        $(".messageTo").val("");
+    $(".submitMessageTo").click(function(){
+        sendMessage();
     });
+
+    /*$(".submitMessageTo").mouseenter(function(){
+        sendMessage();
+    })*/
 })
