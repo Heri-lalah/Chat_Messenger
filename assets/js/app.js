@@ -73,4 +73,17 @@ $(document).ready(function(){
         $(this).val("");
         $(this).addClass("hidden");
     })
+
+    /**
+     * Send message function
+     */
+    $(".submitMessageTo").click(function(e){
+        
+        message = $(".messageTo").val();
+
+        text = '<div class="user w-full flex justify-end"><p class="py-2 ml-auto max-w-md px-2 bg-slate-200 rounded-t-xl rounded-l-xl text-xs">' + message + "</p></div>";
+        
+        $(".tchat_item").append(text);
+        $(".messageTo").val("");
+    });
 })
