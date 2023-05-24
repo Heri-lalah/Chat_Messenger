@@ -1,3 +1,6 @@
+let conversation = document.getElementById('conversation');
+conversation.scrollTop = 10000;
+
 function clickedElement(cible, addClass) {
     value = $(cible).each(function(index){
 
@@ -17,10 +20,11 @@ function clickedElement(cible, addClass) {
 
 function sendMessage(){
    
+    conversation.scrollTop = conversation.scrollTop + 10000;
     value = () => {
         message = $(".messageTo").val();
 
-        text = '<div class="user w-full flex justify-end"><p class="py-2 ml-auto max-w-md px-2 bg-slate-200 rounded-t-xl rounded-l-xl text-xs">' + message + "</p></div>";
+        text = '<div class="user w-full flex justify-end my-1"><span class="py-2 px-2 max-w-md bg-slate-200 rounded-t-xl rounded-l-xl text-xs">' + message + "</span></div>";
         
         $(".tchat_item").append(text);
         $(".messageTo").val("");
@@ -98,7 +102,13 @@ $(document).ready(function(){
         sendMessage();
     });
 
-    /*$(".submitMessageTo").mouseenter(function(){
-        sendMessage();
-    })*/
+    $('.messageTo').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+          sendMessage();
+          conversation.scrollTop = conversation.scrollTop + 10000;
+        }
+    })
+
+
 })
