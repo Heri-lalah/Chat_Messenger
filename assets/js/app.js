@@ -1,5 +1,11 @@
 let conversation = document.getElementById('conversation');
-conversation.scrollTop = 10000;
+
+window.addEventListener('load', function(){
+    conversation.scrollTop = 0;
+    setTimeout(function(){
+        conversation.scrollTop = 10000;
+    }, 1000)
+});
 
 function clickedElement(cible, addClass) {
     value = $(cible).each(function(index){
